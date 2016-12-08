@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Fairy Tail Crystal Collector</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="assets/style/bootstrap.css" media="screen" title="no title">
+    <link rel="stylesheet" href="assets/style/style.css" media="screen" title="no title">
+    <link href="https://fonts.googleapis.com/css?family=Rancho" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.1.1.js" integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+	<!--Beginning of Header-->
+	<div class="header">
+    	<div class="container-fluid">
+			<!--Beginning of Nav Bar-->
+    		<div class="row">
+        		<div class="col-xs-8 centered">
+        			<img src="assets/images/fairytaillogo.png">
+					<button class="btn btn-primary" id="startButton">Start New Game</button>
+					<button class="btn btn-primary" id="restartButton">Restart</button>
+				</div>
+			</div>
+			<!--End of Nav Bar-->
+        </div>
+    </div>
+    <!--End of Header-->
+
+    <!--Beginning of Instructions-->
+    <section id="game board"></section>
+    	<div class="container-fluid">
+    		<!--Beginning of Instructions-->
+   		    <div class="alert alert-dismissible alert-danger" id="instructions">
+	  			<button type="button" class="close" data-dismiss="alert">&times;</button>
+	  			<strong>Instructions to play:</strong> 
+	  			<p>1. You will be given a random number at the start of the game.</p>
+				<p>2. There are four crystals below. By clicking on a crystal you will add a specific amount of points to your total score.</p>
+				<p>3. You win the game by matching your total score to random number you lose the game if your total score goes abocce the random number.</p>
+				<p>	  * It must match exactly that number or you will lose. </p>
+				<p>4. Each time when the game starts, the game will change the values of each crystal.</p>
+				<p>Click <strong>'Start New Game'</strong> to begin.</p>
+				<p>GOOD LUCK!!!</p>
+			</div>
+			<!--End of Instructions-->
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-6" id="randomNumber">
+						<h2 id="chosenNumber"></h2>
+					</div>
+
+					<div class="col-xs-6" id="winsOrLose">
+						<h3 id="winLose"></h3>
+						<h3 id="winsCount">Wins:<span id="wins"></span></h3>
+						<h3 id="lossCount">losses:<span id="losses"></span></h3>
+					</div>
+				</div>
+				
+				<div class="row-fluid">
+					<div class="col-xs-6" id="characters">
+							<img src="assets/images/natsu.png" id="natsu">
+							<img src="assets/images/erza.png" id="erza">
+							<img src="assets/images/lucy.png" id="lucy">
+							<img src="assets/images/gray.png" id="gray">
+					</div>		
+
+					<div class="col-xs-6" id="scoreboard">
+						<h3>Your Total Score Is:</h3>
+						<h3 id="score"></h3>
+					</div>		
+				</div>
+					    
+
+					
+
+	<script src="https://code.jquery.com/jquery.js"></script>
+	<script type = "text/javascript" src="assets/javascript/game.js"></script>
+</body>
+</html>
