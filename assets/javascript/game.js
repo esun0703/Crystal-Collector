@@ -8,6 +8,9 @@ var erzaNumber;
 var lucyNumber;
 var grayNumber;
 
+var wins=0;
+var losses=0;
+
 var score=0;
 
 
@@ -24,8 +27,6 @@ function newGame(){
 
 	//debugging
 	console.log(randomNumber);
-	
-
 }
 
 function characterGenerator(){
@@ -66,41 +67,56 @@ $("#startButton").on("click", function(){
 	});
 });
 
-//**need to fix.
-$("#natsu").on("click",function(){
-	score=score + natsuNumber;
-	$("#score").append(score);
+//need to make add a true/false statement****
+function winOrLose(){
+	if(score==randomNumber){
+		didYouWin=true;
+		wins++;
+		$("#winLose").html("You Win!");
+		$("#wins").html(wins);
+	}
+	else{
+		didYouWin=false;
+		losses++;
+		$("#winLose").html("You Lose!");
+		$("#losses").html(losses);
 
-	//debugging
-});
-
-$("#erza").on("click",function(){
-	score=score + erzaNumber;
-	$("#score").append(score);
-
-});
-
-$("#lucy").on("click",function(){
-	score=score + lucyNumber;
-	$("#score").append(score);
-
-});
-
-$("#gray").on("click",function(){
-	score=score + grayNumber;
-	$("#score").append(score);
-});
+	}		
+}
 
 //every click adds attributed numbers to total score
 	//push that new total score to #score;
 
- //if points equal to number generated in the beginning, then win
- 	//push You win to #winOrLose
- 	//push one point to win if win
- //else 
- 	//push You Lose to #winOrLose
- 	//push one point to lose
- 	//
+//**make into one function?
+	$("#natsu").on("click",function(){
+		score=score + natsuNumber;
+		$("#score").html(score);
+		winOrLose();
+	});
+
+	$("#erza").on("click",function(){
+		score=score + erzaNumber;
+		$("#score").html(score);
+		winOrLose();	
+	});
+
+	$("#lucy").on("click",function(){
+		score=score + lucyNumber;
+		$("#score").html(score);
+		winOrLose();	
+	});
+
+	$("#gray").on("click",function(){
+		score=score + grayNumber;
+		$("#score").html(score);
+		winOrLose();
+	});
+
+
+
+//});
+
+
 
 
 
